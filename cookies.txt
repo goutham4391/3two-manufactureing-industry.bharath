@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.foremostmedia.com	TRUE	/	FALSE	1999999999	.ASPXANONYMOUS	aS884h-5OP151OuQIyWFH-YcR7qjLdjyaHJ3Qg0Sqi_QMEcS36NNcAw8edmJDMyGLknVVE6kURD3VSWTMMqy5hbIVF7E-2Y3Zhn0qr6Uwbu6_-uH0
+www.foremostmedia.com	TRUE	/	FALSE	1999999999	__RequestVerificationToken	MGWjIdII9GZnWedeDBrpFlZM9DFI3eLHFBDAgtO6XaY4RT6IMZkF3wHNP1xdY1qHdS45_w2
+www.foremostmedia.com	TRUE	/	FALSE	1999999999	dnn_IsMobile	False
+www.foremostmedia.com	TRUE	/	FALSE	1999999999	language	en-US
+

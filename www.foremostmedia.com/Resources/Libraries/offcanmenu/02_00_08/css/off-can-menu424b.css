@@ -1,0 +1,294 @@
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#ocmMenuWrapper {
+  display: flex;
+  height: 100%;
+  /*overflow-x: hidden;*/
+  position: fixed;
+  transition: transform .5s;
+  z-index: 5000;
+}
+#ocmMenuWrapper.direction-left::before {
+  background: black;
+  content: "";
+  height: 100%;
+  left: -50%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+#ocmMenuWrapper.direction-right::before {
+  background: #2a2a2a;
+  content: "";
+  height: 100%;
+  right: -50%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+#ocmMenuWrapper.direction-top::before {
+  background: #2a2a2a;
+  content: "";
+  height: 100%;
+  top: -50%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+#ocmMenuWrapper.direction-bottom::before {
+  background: #2a2a2a;
+  content: "";
+  height: 100%;
+  bottom: -50%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+#ocmMenuWrapper .side-panel {
+  background: black;
+  padding: 10px 0;
+  text-align: center;
+}
+#ocmMenuWrapper .side-panel .login-wrapper {
+  border-bottom: 1px solid white;
+  margin-bottom: 20px;
+}
+#ocmMenuWrapper .side-panel a {
+  color: #f2f2f2;
+  display: block;
+  margin: 0 0 20px;
+}
+#ocmMenuWrapper .side-panel a:hover {
+  color: #6a6a6a;
+}
+#ocmMenuWrapper .side-panel a span {
+  font-size: 30px;
+}
+#ocmMenuWrapper .side-panel + ul {
+  position: relative;
+}
+#ocmMenuWrapper ul {
+  background: #2a2a2a;
+  left: 0;
+  margin: 0;
+  max-height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  z-index: 510;
+}
+#ocmMenuWrapper ul.ul-closed {
+  pointer-events: none;
+}
+#ocmMenuWrapper ul li {
+  border-bottom: 1px solid #5d5d5d;
+  color: #f2f2f2;
+  display: block;
+  list-style-type: none;
+}
+#ocmMenuWrapper ul li.btnOCMBack {
+  padding: 11px 15px;
+  transition: background .5s ease 0s;
+}
+#ocmMenuWrapper ul li.btnOCMBack:hover {
+  background: #111111;
+  cursor: pointer;
+}
+#ocmMenuWrapper ul li.btnOCMBack i {
+  color: #909090;
+  font-size: 20px;
+}
+#ocmMenuWrapper ul li > span:nth-of-type(2) {
+  width: calc(100% - 59px);
+}
+#ocmMenuWrapper ul li > span:nth-of-type(2):hover {
+  cursor: pointer;
+}
+#ocmMenuWrapper ul li span {
+  color: #f2f2f2;
+  display: inline-block;
+  padding: 12px 15px;
+  transition: background .5s ease 0s;
+}
+#ocmMenuWrapper ul li span:hover {
+  background: #111111;
+}
+#ocmMenuWrapper ul li a {
+  display: block;
+  text-decoration: none;
+}
+#ocmMenuWrapper ul li a span {
+  width: 100%;
+}
+#ocmMenuWrapper ul ul {
+  backface-visibility: hidden;
+  background: #2a2a2a;
+  margin: 0;
+  top: 0;
+  transition: .5s;
+  width: 100%;
+  z-index: 520;
+}
+#ocmMenuWrapper ul ul .ocmSubMenu {
+  z-index: 521;
+}
+#ocmMenuWrapper ul ul ul {
+  z-index: 540;
+}
+#ocmMenuWrapper ul ul ul .ocmSubMenu {
+  z-index: 541;
+}
+#ocmMenuWrapper ul ul ul ul {
+  z-index: 550;
+}
+#ocmMenuWrapper ul ul ul ul .ocmSubMenu {
+  z-index: 551;
+}
+#ocmMenuWrapper ul ul ul ul ul {
+  z-index: 560;
+}
+#ocmMenuWrapper ul ul ul ul ul .ocmSubMenu {
+  z-index: 561;
+}
+#ocmMenuWrapper ul .ocmSubMenu {
+  background: #2a2a2a;
+  border-left: 1px solid #5d5d5d;
+  color: #909090;
+  display: block;
+  float: right;
+  position: relative;
+  right: 0;
+  text-align: center;
+  top: 0;
+  transition: background .5s ease 0s;
+  width: 59px;
+  z-index: 511;
+}
+#ocmMenuWrapper ul .ocmSubMenu:hover {
+  background: #111111;
+  cursor: pointer;
+}
+#ocmMenuWrapper ul .ocmSubMenu + a {
+  width: calc(100% - 59px);
+}
+#ocmMenuWrapper .ocm-logo {
+  display: inline-block;
+  padding-left: 30px;
+  text-align: center;
+  width: calc(100% - 60px);
+}
+#ocmMenuWrapper .ocm-logo:only-child {
+  padding-left: 0;
+  width: 100%;
+}
+#ocmMenuWrapper .ocm-logo + .ocm-close {
+  display: inline-block;
+  vertical-align: top;
+}
+#ocmMenuWrapper .ocm-logo img {
+  margin: 10px;
+  max-height: 60px;
+}
+#ocmMenuWrapper .ocm-close:hover {
+  cursor: pointer;
+}
+#ocmMenuWrapper .ocm-close span {
+  padding: 11px 22px;
+  text-align: right;
+}
+#ocmMenuWrapper .ocm-close span i {
+  color: #909090;
+  font-size: 20px;
+}
+
+.ocm-overlay {
+  background: black;
+  position: fixed;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity .3s ease 0s, visibility .3s ease 0s;
+  visibility: hidden;
+  width: 100vw;
+  z-index: 4000;
+}
+.ocm-overlay.active {
+  opacity: .4;
+  visibility: visible;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  padding: 0;
+  transition-duration: .5s;
+  transition-timing-function: linear;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+.hamburger:hover .hamburger-box .hamburger-inner,
+.hamburger:hover .hamburger-box .hamburger-inner::before,
+.hamburger:hover .hamburger-box .hamburger-inner::after {
+  background: #808080;
+}
+.hamburger.is-active .hamburger-box .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger.is-active .hamburger-box .hamburger-inner::before {
+  top: 0;
+  transition: top 0.075s ease, background .5s ease 0s;
+}
+.hamburger.is-active .hamburger-box .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(90deg);
+  transition: bottom 0.075s ease, background .5s ease 0s, transform 0.2s 0.24s cubic-bezier(0.215, 0.61, 0.355, 1.5);
+}
+.hamburger .hamburger-box {
+  align-self: center;
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  width: 30px;
+}
+.hamburger .hamburger-box .hamburger-inner {
+  display: block;
+  margin-top: -2px;
+  top: 50%;
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger .hamburger-box .hamburger-inner, .hamburger .hamburger-box .hamburger-inner::before, .hamburger .hamburger-box .hamburger-inner::after {
+  background-color: black;
+  border-radius: 4px;
+  height: 4px;
+  position: absolute;
+  transition: transform .15s ease 0s, background .5s ease 0s;
+  width: 30px;
+}
+.hamburger .hamburger-box .hamburger-inner::before, .hamburger .hamburger-box .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger .hamburger-box .hamburger-inner::before {
+  top: -7px;
+  transition: top 0.075s 0.12s ease, background .5s ease 0s;
+}
+.hamburger .hamburger-box .hamburger-inner::after {
+  bottom: -7px;
+  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19), background .5s ease 0s;
+}
+.hamburger .menu-label {
+  align-self: center;
+  font-family: inherit;
+  font-size: 20px;
+  margin-left: 5px;
+}
